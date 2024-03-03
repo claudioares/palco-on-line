@@ -1,12 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "../../app/globals.css";
-// import { Search } from "../components/search/Search";
 import Search from "../components/search/Search.astro";
+import Galery from "../components/galery/Galery.astro";
 ---
 
+<script>
+  document.getElementById("iconToggleNav")?.addEventListener("click", () => {
+    const navBar = document.getElementById("navBarContent");
+
+    navBar?.classList.toggle("lg:w-[28%]]");
+    navBar?.classList.toggle("lg:w-0");
+    navBar?.classList.toggle("lg:px-1");
+    navBar?.classList.toggle("lg:px-0");
+    navBar?.classList.toggle("opacity-0");
+    navBar?.classList.toggle("opacity-100");
+  });
+</script>
 <Layout title="Palco Online">
-  <main class="flex w-full h-[32.9rem] py-5 pt-24 px-6">
+  <main
+    class="flex flex-col w-full h-screen gap-4 pt-28 px-4 py-4 my-auto mx-auto"
+  >
     <!-- backgroud image -->
     <div
       class="w-full h-full bg-palco-bg bg-center bg-contain opacity-[1.5%] fixed top-0 z-[-1]"
@@ -16,6 +30,40 @@ import Search from "../components/search/Search.astro";
     </div>
     <!--  -->
 
-    <Search />
+    <div
+      class={`
+      flex w-full h-[30rem]
+      max-lg:flex-col-reverse max-lg:gap-4 max-lg:h-auto
+    `}
+    >
+      <div
+        id="navBarContent"
+        class={`
+          flex flex-col lg:px-1 py-4 gap-4 lg:w-[28%] h-full bg-zinc-900 overflow-y-hidden overflow-x-hidden transition-all duration-300 rounded-l-xl
+          max-lg:selection:py-1 max-lg:h-[60rem] max-lg:w-[32rem]
+        `}
+      >
+        <Search />
+        <Galery />
+      </div>
+      <div class="w-[2%] bg-zinc-900 border-l-2 text-white max-lg:hidden">
+        <h1
+          id="iconToggleNav"
+          class="cursor-pointer flex items-center justify-center hover:text-red-900 font-bold h-full"
+        >
+          &#8644;
+        </h1>
+      </div>
+      <div
+        class={`
+          w-[70%] h-full flex items-center justify-center bg-slate-200 rounded-r-xl
+          max-lg:w-full max-lg:h-full
+        `}
+      >
+        videos
+      </div>
+    </div>
+
+    dklafjçldjfaçlk
   </main>
 </Layout>

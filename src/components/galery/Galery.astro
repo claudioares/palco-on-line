@@ -1,0 +1,19 @@
+<div
+  class="w-full h-[25rem] px-4 gap-2 flex flex-1 flex-col justify-start overflow-x-auto rounded-t-lg"
+>
+  {
+    Array.from({ length: 8 }).map((_, index) => (
+      <div class="flex gap-4 rounded-lg w-full h-20 cursor-pointer">
+        <img
+          class="w-60 h-20 rounded-lg object-cover object-center"
+          src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg"
+          alt=""
+        />
+        <div class="text-white w-32">
+          <h1 class="text-sm">Nome do video</h1>
+          <p class="text-[0.7rem] font-light">Descrição do video</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
