@@ -3,6 +3,7 @@ export default {
   theme: {
     fontFamily: {
       'Architects-Daughter': ['"Architects Daughter", cursive;'],
+      "Roboto": ['"Roboto", sans-serif;']
     }
   }
 }

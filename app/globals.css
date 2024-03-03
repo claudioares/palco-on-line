@@ -5,3 +5,14 @@
 input {
     all: unset;
 }
+
+#galery::-webkit-scrollbar {
+    box-shadow: inset 0 0 5px grey; 
+  }
+#galery::-webkit-scrollbar-thumb {
+    background: rgb(129, 129, 129); 
+    border-radius: 10px;
+  }
+#galery::-webkit-scrollbar-thumb:hover {
+    background: #74263a; 
+  }
