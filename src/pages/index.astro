@@ -1,8 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import InputComponentReact from "../components/input/Input";
 import "../../app/globals.css";
+import { Image } from "astro:assets";
 import Search from "../components/search/Search.astro";
 import Galery from "../components/galery/Galery.astro";
+import logo from "../assets/palco.png";
 ---
 
 <script>
@@ -19,51 +22,47 @@ import Galery from "../components/galery/Galery.astro";
 </script>
 <Layout title="Palco Online">
   <main
-    class="flex flex-col w-full h-screen gap-4 pt-28 px-4 py-4 my-auto mx-auto"
+    class="flex flex-col w-full h-screen gap-4 pt-32 px-8 py-6 my-auto mx-auto"
   >
     <!-- backgroud image -->
     <div
-      class="w-full h-full bg-palco-bg bg-center bg-contain opacity-[1.5%] fixed top-0 z-[-1]"
+      class="w-full h-full bg-bg-logo bg-center bg-contain opacity-[1.5%] fixed top-0 z-[-1]"
     >
     </div>
-    <div class="w-full h-full fixed bg-black opacity-50 top-0 left-0 z-[-1]">
+    <div class="w-full h-full fixed bg-black opacity-70 top-0 left-0 z-[-1]">
     </div>
     <!--  -->
 
     <div
       class={`
-      flex w-full h-[30rem]
-      max-lg:flex-col-reverse max-lg:gap-4 max-lg:h-auto
-    `}
+        w-[50%] h-full flex flex-col items-center justify-evenly
+        max-lg:w-full
+      `}
     >
+      <h1 class="text-6xl max-lg:text-5xl text-white font-Dosis font-medium">
+        Bem-vindo a sua <p class="text-red-600">música ao vivo</p>
+      </h1>
       <div
-        id="navBarContent"
-        class={`
-          flex flex-col lg:px-1 py-4 gap-4 lg:w-[28%] h-full bg-zinc-900 overflow-y-hidden overflow-x-hidden transition-all duration-300 rounded-l-xl
-          max-lg:selection:py-1 max-lg:h-[60rem] max-lg:w-[32rem]
-        `}
+        class="bg-slate-300 w-[25rem] h-72 flex flex-col items-center rounded-lg"
       >
-        <Search />
-        <Galery />
-      </div>
-      <div class="w-[2%] bg-zinc-900 border-l-2 text-white max-lg:hidden">
-        <h1
-          id="iconToggleNav"
-          class="cursor-pointer flex items-center justify-center hover:text-red-900 font-bold h-full"
-        >
-          &#8644;
-        </h1>
-      </div>
-      <div
-        class={`
-          w-[70%] h-full flex items-center justify-center bg-slate-200 rounded-r-xl
-          max-lg:w-full max-lg:h-full
-        `}
-      >
-        videos
+        <div class="flex flex-col w-full h-full items-center justify-evenly">
+          <h1 class="text-xl font-Dosis font-bold">Login</h1>
+          <form class="flex gap-4 flex-col">
+            <InputComponentReact
+              placeholder="Digite seu email aquí"
+              id="email"
+            />
+            <InputComponentReact
+              placeholder="Digite sua senha aquí"
+              id="password"
+            />
+          </form>
+          <div>
+            <span class="text-center text-sm">Ainda não tem cadastro?</span>
+            <a href="#" class="text-red-600 hover:opacity-80">Cadastre-se</a>
+          </div>
+        </div>
       </div>
     </div>
-
-    dklafjçldjfaçlk
   </main>
 </Layout>
