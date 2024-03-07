@@ -2,10 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import InputComponentReact from "../components/input/Input";
 import "../../app/globals.css";
-import { Image } from "astro:assets";
-import Search from "../components/search/Search.astro";
-import Galery from "../components/galery/Galery.astro";
-import logo from "../assets/palco.png";
+import video01 from "../assets/videos (1).mp4";
+import video02 from "../assets/videos (2).mp4";
+import video03 from "../assets/videos (7).mp4";
+import video04 from "../assets/videos (9).mp4";
 ---
 
 <script>
@@ -21,17 +21,15 @@ import logo from "../assets/palco.png";
   });
 </script>
 <Layout title="Palco Online">
-  <main
-    class="flex flex-col w-full h-screen gap-4 pt-32 px-8 py-6 my-auto mx-auto"
-  >
-    <!-- backgroud image -->
+  <main class="flex w-full h-screen gap-4 pt-32 px-8 py-6 my-auto mx-auto">
+    <!-- backgrouds -->
     <div
-      class="w-full h-full bg-bg-logo bg-center bg-contain opacity-[1.5%] fixed top-0 z-[-1]"
+      class="w-full h-full bg-bg-logo bg-center bg-contain opacity-[1.5%] fixed top-0 left-0 z-[-1]"
     >
     </div>
     <div class="w-full h-full fixed bg-black opacity-70 top-0 left-0 z-[-1]">
     </div>
-    <!--  -->
+    <!-- backgrouds -->
 
     <div
       class={`
@@ -59,9 +57,65 @@ import logo from "../assets/palco.png";
           </form>
           <div>
             <span class="text-center text-sm">Ainda não tem cadastro?</span>
-            <a href="#" class="text-red-600 hover:opacity-80">Cadastre-se</a>
+            <a
+              href="/register"
+              class="display-hidden text-red-600 hover:opacity-80"
+              >Cadastre-se</a
+            >
           </div>
         </div>
+      </div>
+    </div>
+
+    <div
+      class="w-[50%] h-full flex flex-col items-center gap-2 py-4 pl-4 justify-center"
+    >
+      <div
+        class="flex items-center justify-center py-1 gap-1 h-auto w-auto overflow-clip"
+      >
+        <video
+          autoplay
+          preload="auto"
+          loop
+          width="310"
+          height="230"
+          class="rounded-lg"
+        >
+          <source src={video01} type="video/mp4" />
+        </video>
+        <video
+          autoplay
+          preload="auto"
+          width="310"
+          height="230"
+          class="rounded-lg"
+        >
+          <source src={video02} type="video/mp4" />
+        </video>
+      </div>
+
+      <div
+        class="flex items-center justify-center py-1 gap-1 h-auto w-auto overflow-clip"
+      >
+        <video
+          autoplay
+          preload="auto"
+          loop
+          width="310"
+          height="230"
+          class="rounded-lg"
+        >
+          <source src={video03} type="video/mp4" />
+        </video>
+        <video
+          autoplay
+          preload="auto"
+          width="310"
+          height="230"
+          class="rounded-lg"
+        >
+          <source src={video04} type="video/mp4" />
+        </video>
       </div>
     </div>
   </main>

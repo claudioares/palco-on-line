@@ -14,7 +14,7 @@ import logo from "../../assets/palco.png";
   });
 </script>
 
-<header class="flex w-full h-20 bg-black px-36 opacity-85 z-20 fixed">
+<header class="flex w-full h-20 bg-black px-36 top-0 opacity-85 z-20 fixed">
   <button
     id="buttonNavMenu"
     class="fixed top-5 left-10 z-30 text-white bg-orange-700 w-32 h-10 rounded-lg lg:hidden"
@@ -28,8 +28,13 @@ import logo from "../../assets/palco.png";
       max-lg:opacity-90 max-lg:gap-10 max-lg:overflow-hidden max-lg:transition-all duration-1000
     `}
   >
-    <li><a class="hover:text-slate-200" href="#">Home</a></li>
-    <li><a class="hover:text-slate-200" href="#">Ao vivo</a></li>
+    <li><a class="hover:text-slate-200 hover:underline" href="/">Home</a></li>
+    <li>
+      <a class="hover:text-slate-200 hover:underline" href="/videos">Videos</a>
+    </li>
+    <li>
+      <a class="hover:text-slate-200 hover:underline" href="/live">Ao vivo</a>
+    </li>
   </ul>
   <Image
     class={`

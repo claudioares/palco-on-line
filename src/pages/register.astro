@@ -1,0 +1,43 @@
+---
+import InputComponentReact from "../components/input/Input";
+import LayoutRegister from "../layouts/LayoutResister.astro";
+import "../../app/globals.css";
+---
+
+<LayoutRegister title="Register">
+  <div
+    class={`
+        flex items-center justify-center w-full h-full fixed top-0 left-0 z-50 bg-black
+  `}
+  >
+    <div
+      class="h-full w-full bg-bg-logo bg-repeat bg-contain bg-center opacity-60 fixed top-0 bottom-0 z-[-1]"
+    >
+    </div>
+    <form
+      class="flex flex-col items-center justify-center rounded-lg gap-5 text-slate-50 bg-zinc-900 w-[25rem] h-[35rem]"
+    >
+      <h1 class="text-xl font-Dosis font-bold">Cadastre-se</h1>
+      <InputComponentReact placeholder="Digite seu email aquí" id="email" />
+      <InputComponentReact
+        placeholder="Digite seu userName aquí"
+        id="userName"
+      />
+      <InputComponentReact
+        placeholder="Digite seu Password aquí"
+        id="password"
+      />
+
+      <div class="flex justify-center gap-4 w-full h-auto">
+        <button class="w-auto h-auto bg-green-950 py-2 px-4 rounded-lg">
+          Continuar
+        </button>
+      </div>
+      <div class="flex justify-center gap-2 w-full">
+        <p>Já tem registro?</p><a href="/" class="text-red-600 cursor-pointer"
+          >Login</a
+        >
+      </div>
+    </form>
+  </div>
+</LayoutRegister>
