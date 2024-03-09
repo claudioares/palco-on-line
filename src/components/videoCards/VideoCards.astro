@@ -1,0 +1,62 @@
+---
+import video01 from "../../assets/videos (1).mp4";
+import video02 from "../../assets/videos (2).mp4";
+import video03 from "../../assets/videos (3).mp4";
+import video04 from "../../assets/videos (4).mp4";
+---
+
+<div
+  class="w-[50%] h-full flex flex-col items-center gap-2 py-4 pl-4 justify-center"
+>
+  <div
+    class="flex items-center justify-center py-1 gap-1 h-auto w-auto overflow-clip"
+  >
+    <video
+      autoplay
+      preload="none"
+      loop
+      muted
+      width="310"
+      height="230"
+      class="rounded-lg"
+    >
+      <source src={video01} type="video/mp4" />
+    </video>
+    <video
+      autoplay
+      preload="none"
+      muted
+      width="310"
+      height="230"
+      class="rounded-lg"
+    >
+      <source src={video02} type="video/mp4" />
+    </video>
+  </div>
+
+  <div
+    class="flex items-center justify-center py-1 gap-1 h-auto w-auto overflow-clip"
+  >
+    <video
+      autoplay
+      preload="none"
+      muted
+      loop
+      width="310"
+      height="230"
+      class="rounded-lg"
+    >
+      <source src={video03} type="video/mp4" />
+    </video>
+    <video
+      autoplay
+      preload="none"
+      muted
+      width="310"
+      height="230"
+      class="rounded-lg"
+    >
+      <source src={video04} type="video/mp4" />
+    </video>
+  </div>
+</div>
