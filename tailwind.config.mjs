@@ -4,7 +4,7 @@ export default {
     extend: {
       backgroundOpacity: ['active'],
       backgroundImage: {
-        'bg-logo': "url('./logoSVG.svg')",
+        'bg-logo': "url('../src/assets/palco.png')",
       }
     },
     fontFamily: {
