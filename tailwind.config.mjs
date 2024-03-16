@@ -12,5 +12,5 @@ export default {
       "Roboto": ['"Roboto", sans-serif;'],
       "Dosis": ['"Dosis", sans-serif;']
     }
-  }
+  },
 }
