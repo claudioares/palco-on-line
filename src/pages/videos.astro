@@ -1,11 +1,11 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import LayoutVideos from "../layouts/Layout.astro";
 import Header from "../components/header/Header.astro";
-import "../../app/globals.css";
 import CardsVideos from "../components/cardsVideos/CardsVideos";
+import "../../app/globals.css";
 ---
 
-<Layout title="Palco Online">
+<LayoutVideos title="Palco Online">
   <Header />
   <main
     class="flex items-center justify-center w-auto min-h-screen text-white pt-48"
@@ -14,4 +14,4 @@ import CardsVideos from "../components/cardsVideos/CardsVideos";
       <CardsVideos />
     </div>
   </main>
-</Layout>
+</LayoutVideos>

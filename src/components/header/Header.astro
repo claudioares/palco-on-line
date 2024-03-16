@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../../assets/palco.png";
+import iconRec from "../../assets/icons/iconRec.png";
 ---
 
 <script>
@@ -31,8 +32,9 @@ import logo from "../../assets/palco.png";
     <li>
       <a class="hover:text-slate-200 hover:underline" href="/videos">Videos</a>
     </li>
-    <li>
+    <li class="flex items-center justify-center gap-2">
       <a class="hover:text-slate-200 hover:underline" href="/live">Ao vivo</a>
+      <Image src={iconRec} alt="icone de video cam" class="w-8 animate-pulse" />
     </li>
   </ul>
   <Image
