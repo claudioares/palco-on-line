@@ -15,7 +15,12 @@ import iconRec from "../../assets/icons/iconRec.png";
   });
 </script>
 
-<header class="flex w-full h-20 bg-black px-36 top-0 opacity-45 z-20 fixed">
+<header
+  class={`
+    flex w-full h-20 bg-black px-36 top-0 opacity-45 z-50 fixed
+    max-lg:opacity-100
+  `}
+>
   <button
     id="buttonNavMenu"
     class="fixed top-5 left-10 z-30 text-white bg-orange-700 w-32 h-10 rounded-lg lg:hidden"
@@ -29,6 +34,9 @@ import iconRec from "../../assets/icons/iconRec.png";
       max-lg:opacity-90 max-lg:gap-10 max-lg:overflow-hidden max-lg:transition-all duration-1000
     `}
   >
+    <li>
+      <a class="hover:text-slate-200 hover:underline" href="/">Home</a>
+    </li>
     <li>
       <a class="hover:text-slate-200 hover:underline" href="/videos">Videos</a>
     </li>
