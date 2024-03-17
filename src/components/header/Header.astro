@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import logo from "../../assets/palco.png";
 import iconRec from "../../assets/icons/iconRec.png";
+import SocialLinks from "../../components/socialLinks/SocialLinks.astro";
 ---
 
 <script>
@@ -31,20 +32,37 @@ import iconRec from "../../assets/icons/iconRec.png";
     class={`
       flex flex-1 items-center gap-16 h-full text-white text-lg
       max-lg:fixed max-lg:z-20 max-lg:w-full max-lg:max-h-0 max-lg:bg-black left-0 max-lg:flex max-lg:flex-col max-lg:justify-center
-      max-lg:opacity-90 max-lg:gap-10 max-lg:overflow-hidden max-lg:transition-all duration-1000
+      max-lg:opacity-90 max-lg:gap-10 max-lg:overflow-hidden max-lg:transition-all duration-1000 
     `}
   >
-    <li>
-      <a class="hover:text-slate-200 hover:underline" href="/">Home</a>
-    </li>
-    <li>
-      <a class="hover:text-slate-200 hover:underline" href="/videos">Videos</a>
-    </li>
-    <li class="flex items-center justify-center gap-2">
-      <a class="hover:text-slate-200 hover:underline" href="/live">Ao vivo</a>
-      <Image src={iconRec} alt="icone de video cam" class="w-8 animate-pulse" />
+    <li
+      class={`
+      flex items-center justify-between w-[50%] h-full
+      max-lg:flex-col max-lg:w-full max-lg:h-auto max-lg:gap-10
+    `}
+    >
+      <a
+        class="hover:text-slate-200 h-full hover:border-b-2 flex items-center justify-center"
+        href="/">Home</a
+      >
+      <a
+        class="hover:text-slate-200 h-full hover:border-b-2 flex items-center justify-center"
+        href="/videos">Videos</a
+      >
+      <div class="flex items-center justify-center gap-2 h-full">
+        <a
+          class="hover:text-slate-200 h-full hover:border-b-2 flex items-center justify-center"
+          href="/live">Ao vivo</a
+        >
+        <Image
+          src={iconRec}
+          alt="icone de video cam"
+          class="w-8 animate-pulse"
+        />
+      </div>
     </li>
   </ul>
+  <SocialLinks />
   <Image
     class={`
       fixed right-20 top-1 border border-zinc-800 w-24
