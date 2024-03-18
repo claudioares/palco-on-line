@@ -1,5 +1,5 @@
 ---
-import ModalCllickCard from "./ModalClickCard";
+import ModalCllickCard from "./ModalClickCard.astro";
 import { HandHeart, PlayCircleIcon } from "lucide-react";
 import { apiImagensCardVideos } from "../../API_simulation_to_test/API";
 import { Image } from "astro:assets";
@@ -21,9 +21,9 @@ import InfoMusic from "./infoMusic";
                 max-md:w-full max-md:px-4
             `}
         >
-          <div class="relative flex justify-center items-center w-full h-[61%] bg-white rounded-lg">
+          <div class="relative flex justify-center items-center w-full h-[61%] bg-white rounded-lg hover:border">
             <div
-              class={`absolute justify-center gap-1 items-center top-0 left-0
+              class={`absolute justify-center gap-1 items-center top-0 left-0 rounded-lg
                         w-full h-full cursor-pointer opacity-0
                         hover:flex hover:opacity-100 hover:bg-black hover:bg-opacity-65`}
             >
@@ -33,7 +33,7 @@ import InfoMusic from "./infoMusic";
             <Image
               src={infoCard.img}
               alt="imagem de fundo do card"
-              class="text-black w-full h-full rounded-t-lg"
+              class="text-black w-full h-full rounded-lg"
             />
           </div>
           <InfoMusic
@@ -47,3 +47,4 @@ import InfoMusic from "./infoMusic";
   </div>
   <ModalCllickCard />
 </div>
+./ModalClickCard.tsx

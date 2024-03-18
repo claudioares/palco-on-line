@@ -1,10 +1,10 @@
-import imgCard1 from "../../public/img_card (1).jpg"
-import imgCard2 from "../../public/img_card (2).jpg"
-import imgCard3 from "../../public/img_card (3).jpg"
-import imgCard4 from "../../public/img_card (4).jpg"
-import imgCard5 from "../../public/img_card (5).jpg"
-import imgCard6 from "../../public/img_card (6).jpg"
-import imgCard7 from "../../public/img_card (7).jpg"
+import imgCard1 from "../assets/imgns_videosCards/img_card (1).webp"
+import imgCard2 from "../assets/imgns_videosCards/img_card (2).jpg"
+import imgCard3 from "../assets/imgns_videosCards/img_card (3).jpg"
+import imgCard4 from "../assets/imgns_videosCards/img_card (4).jpg"
+import imgCard5 from "../assets/imgns_videosCards/img_card (5).jpg"
+import imgCard6 from "../assets/imgns_videosCards/img_card (6).jpg"
+import imgCard7 from "../assets/imgns_videosCards/img_card (7).jpg"
 
 
 export const apiImagensCardVideos = [
