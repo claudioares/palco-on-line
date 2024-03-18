@@ -14,6 +14,30 @@ import SocialLinks from "../../components/socialLinks/SocialLinks.astro";
     navManu?.classList.toggle("opacity-0");
     navManu?.classList.toggle("opacity-100");
   });
+  addEventListener("DOMContentLoaded", () => {
+    const home = document.getElementById("menuHome");
+    const videos = document.getElementById("menuVideos");
+    const live = document.getElementById("menuLive");
+    const divLive = document.getElementById("divLive");
+
+    const pathName = window.location.pathname;
+
+    if (pathName === "/") {
+      home?.classList.toggle("text-red-600");
+      home?.classList.toggle("hover:text-red-600");
+      home?.classList.toggle("border-none");
+    }
+    if (pathName === "/videos") {
+      videos?.classList.toggle("text-red-600");
+      videos?.classList.toggle("hover:text-red-600");
+      videos?.classList.toggle("border-none");
+    }
+    if (pathName === "/live") {
+      live?.classList.toggle("text-red-600");
+      live?.classList.toggle("hover:text-red-600");
+      divLive?.classList.toggle("border-none");
+    }
+  });
 </script>
 
 <header
@@ -42,17 +66,21 @@ import SocialLinks from "../../components/socialLinks/SocialLinks.astro";
     `}
     >
       <a
+        id="menuHome"
         class="hover:text-slate-200 h-full hover:border-b-2 flex items-center justify-center"
         href="/">Home</a
       >
       <a
+        id="menuVideos"
         class="hover:text-slate-200 h-full hover:border-b-2 flex items-center justify-center"
         href="/videos">Videos</a
       >
       <div
+        id="divLive"
         class="flex items-center justify-center gap-2 h-full cursor-pointer hover:border-b-2"
       >
         <a
+          id="menuLive"
           class="hover:text-slate-200 h-full flex items-center justify-center"
           href="/live">Ao vivo</a
         >

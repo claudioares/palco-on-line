@@ -1,6 +1,6 @@
 ---
 import ModalCllickCard from "./ModalClickCard.astro";
-import { HandHeart, PlayCircleIcon } from "lucide-react";
+import { PlayCircleIcon } from "lucide-react";
 import { apiImagensCardVideos } from "../../API_simulation_to_test/API";
 import { Image } from "astro:assets";
 import InfoMusic from "./infoMusic";
@@ -8,6 +8,7 @@ import InfoMusic from "./infoMusic";
 
 <div>
   <div
+    id="cardVideo"
     class={`
         flex flex-wrap w-full h-auto gap-4 justify-center items-center
         max-md:flex-col
@@ -47,4 +48,3 @@ import InfoMusic from "./infoMusic";
   </div>
   <ModalCllickCard />
 </div>
-./ModalClickCard.tsx
