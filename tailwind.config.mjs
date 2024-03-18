@@ -10,7 +10,8 @@ export default {
     fontFamily: {
       'Architects-Daughter': ['"Architects Daughter", cursive;'],
       "Roboto": ['"Roboto", sans-serif;'],
-      "Dosis": ['"Dosis", sans-serif;']
+      "Dosis": ['"Dosis", sans-serif;'],
+      "Inter": ['"Inter", sans-serif;']
     }
   },
 }

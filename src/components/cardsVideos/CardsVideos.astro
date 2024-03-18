@@ -1,0 +1,49 @@
+---
+import ModalCllickCard from "./ModalClickCard";
+import { HandHeart, PlayCircleIcon } from "lucide-react";
+import { apiImagensCardVideos } from "../../API_simulation_to_test/API";
+import { Image } from "astro:assets";
+import InfoMusic from "./infoMusic";
+---
+
+<div>
+  <div
+    class={`
+        flex flex-wrap w-full h-auto gap-4 justify-center items-center
+        max-md:flex-col
+    `}
+  >
+    {
+      apiImagensCardVideos.map((infoCard, _) => (
+        <div
+          class={`
+                w-[25%] h-72 flex flex-col gap-3 rounded-lg
+                max-md:w-full max-md:px-4
+            `}
+        >
+          <div class="relative flex justify-center items-center w-full h-[61%] bg-white rounded-lg">
+            <div
+              class={`absolute justify-center gap-1 items-center top-0 left-0
+                        w-full h-full cursor-pointer opacity-0
+                        hover:flex hover:opacity-100 hover:bg-black hover:bg-opacity-65`}
+            >
+              <PlayCircleIcon />
+            </div>
+
+            <Image
+              src={infoCard.img}
+              alt="imagem de fundo do card"
+              class="text-black w-full h-full rounded-t-lg"
+            />
+          </div>
+          <InfoMusic
+            musicName={infoCard.nameMusic}
+            composer={infoCard.composer}
+            interpreter={infoCard.interpreter}
+          />
+        </div>
+      ))
+    }
+  </div>
+  <ModalCllickCard />
+</div>
