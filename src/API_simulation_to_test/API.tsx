@@ -10,6 +10,7 @@ import imgCard7 from "../assets/imgns_videosCards/img_card (7).jpg"
 export const apiImagensCardVideos = [
     {
         id:"01",
+        slug: "chaodegiz",
         img:imgCard1,
         nameMusic: "Chão de giz",
         composer: "Zé Ramalho",
@@ -18,6 +19,7 @@ export const apiImagensCardVideos = [
     },
     {
         id:"02",
+        slug: "travessia",
         img:imgCard2,
         nameMusic: "Travessia",
         composer: "João Alberto",
@@ -25,13 +27,15 @@ export const apiImagensCardVideos = [
     },
     {
         id:"03",
+        slug: "osmalesdomundo",
         img:imgCard3,
-        nameMusic: "O males do mundo",
+        nameMusic: "Os males do mundo",
         composer: "Rogerio Frausino",
         interpreter: "Romeu Matheus"
     }, 
     {
         id:"04",
+        slug: "evidencias",
         img:imgCard4,
         nameMusic: "Evidências",
         composer: "Chitãozinho e Xororó",
@@ -39,13 +43,15 @@ export const apiImagensCardVideos = [
     },
     {
         id:"05",
+        slug: "indios",
         img:imgCard5,
-        nameMusic: "Indios",
+        nameMusic: "Índios",
         composer: "Renato Russo",
         interpreter: "Fernando Pessoa"
     },
     {
         id:"06",
+        slug: "contrastes",
         img:imgCard6,
         nameMusic: "Contrastes",
         composer: "Fernando Pessoa",
@@ -53,6 +59,7 @@ export const apiImagensCardVideos = [
     },
     {
         id:"07",
+        slug: "emnomedobem",
         img:imgCard7,
         nameMusic: "Em nome do bem",
         composer: "João vitor",

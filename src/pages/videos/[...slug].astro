@@ -1,0 +1,44 @@
+---
+import LayoutVideo from "../../layouts/LayoutVideos.astro";
+import { apiImagensCardVideos } from "../../API_simulation_to_test/API";
+import "../../../app/globals.css";
+
+export const getStaticPaths = async () => {
+  return apiImagensCardVideos.map(({ slug, nameMusic, composer }) => {
+    return {
+      params: { slug },
+      props: { nameMusic, composer },
+    };
+  });
+};
+
+const { nameMusic } = Astro.props;
+---
+
+<LayoutVideo title={`palco ${nameMusic}`}>
+  <main class="bg-bg-logo w-full h-screen">
+    <div
+      class={`
+      flex w-full h-full bg-black bg-opacity-80 pt-20
+      max-lg:flex-col-reverse
+      `}
+    >
+      <section
+        class={`
+      bg-red-900 flex flex-col h-full w-[25%]
+      max-lg:w-full
+      `}
+      >
+        miniaturas de videos
+      </section>
+      <section
+        class={`
+          bg-orange-400 flex items-center justify-center h-full w-[75%]
+          max-lg:w-full
+          `}
+      >
+        Rodando agora {nameMusic}
+      </section>
+    </div>
+  </main>
+</LayoutVideo>

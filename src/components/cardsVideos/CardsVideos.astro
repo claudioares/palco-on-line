@@ -1,5 +1,4 @@
 ---
-import ModalCllickCard from "./ModalClickCard.astro";
 import { PlayCircleIcon } from "lucide-react";
 import { apiImagensCardVideos } from "../../API_simulation_to_test/API";
 import { Image } from "astro:assets";
@@ -21,14 +20,17 @@ import InfoMusic from "./infoMusic";
                 w-[25%] h-72 flex flex-col gap-3 rounded-lg
                 max-md:w-full max-md:px-4
             `}
+          id={infoCard.id}
         >
           <div class="relative flex justify-center items-center w-full h-[61%] bg-white rounded-lg hover:border">
             <div
               class={`absolute justify-center gap-1 items-center top-0 left-0 rounded-lg
-                        w-full h-full cursor-pointer opacity-0
-                        hover:flex hover:opacity-100 hover:bg-black hover:bg-opacity-65`}
+              w-full h-full cursor-pointer opacity-0
+              hover:flex hover:opacity-100 hover:bg-black hover:bg-opacity-65`}
             >
-              <PlayCircleIcon />
+              <a href="" class="w-full h-full p-6">
+                <PlayCircleIcon />
+              </a>
             </div>
 
             <Image
@@ -46,5 +48,4 @@ import InfoMusic from "./infoMusic";
       ))
     }
   </div>
-  <ModalCllickCard />
 </div>
