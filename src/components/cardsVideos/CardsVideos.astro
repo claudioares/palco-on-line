@@ -7,38 +7,38 @@ import InfoMusic from "./infoMusic";
 
 <div>
   <div
-    id="cardVideo"
     class={`
         flex flex-wrap w-full h-auto gap-4 justify-center items-center
         max-md:flex-col
-    `}
+        `}
   >
     {
       apiImagensCardVideos.map((infoCard, _) => (
         <div
           class={`
-                w-[25%] h-72 flex flex-col gap-3 rounded-lg
-                max-md:w-full max-md:px-4
-            `}
-          id={infoCard.id}
+          w-[25%] h-72 flex flex-col gap-3 rounded-lg
+          max-md:w-full max-md:px-4
+          infocardvideos
+          `}
+          id={`${infoCard.slug}`}
         >
           <div class="relative flex justify-center items-center w-full h-[61%] bg-white rounded-lg hover:border">
-            <div
-              class={`absolute justify-center gap-1 items-center top-0 left-0 rounded-lg
+            <a
+              class={`absolute gap-1 p-7 top-0 left-0 rounded-lg
               w-full h-full cursor-pointer opacity-0
               hover:flex hover:opacity-100 hover:bg-black hover:bg-opacity-65`}
+              href={`/videos/${infoCard.slug}`}
             >
-              <a href="" class="w-full h-full p-6">
-                <PlayCircleIcon />
-              </a>
-            </div>
+              <PlayCircleIcon />
+            </a>
 
             <Image
               src={infoCard.img}
               alt="imagem de fundo do card"
-              class="text-black w-full h-full rounded-lg"
+              class="w-full h-full rounded-lg"
             />
           </div>
+
           <InfoMusic
             musicName={infoCard.nameMusic}
             composer={infoCard.composer}

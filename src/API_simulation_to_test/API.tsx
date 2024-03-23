@@ -7,7 +7,16 @@ import imgCard6 from "../assets/imgns_videosCards/img_card (6).jpg"
 import imgCard7 from "../assets/imgns_videosCards/img_card (7).jpg"
 
 
-export const apiImagensCardVideos = [
+interface IImageMetadata {
+    id: string,
+    slug: string,
+    img: string | any,
+    nameMusic: string,
+    composer: string,
+    interpreter: string
+}
+
+export const apiImagensCardVideos: IImageMetadata[] = [
     {
         id:"01",
         slug: "chaodegiz",
