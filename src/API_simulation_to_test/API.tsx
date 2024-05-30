@@ -5,6 +5,7 @@ import imgCard4 from "../assets/imgns_videosCards/img_card (4).jpg"
 import imgCard5 from "../assets/imgns_videosCards/img_card (5).jpg"
 import imgCard6 from "../assets/imgns_videosCards/img_card (6).jpg"
 import imgCard7 from "../assets/imgns_videosCards/img_card (7).jpg"
+import { youtubeApi } from "../service/api"
 
 
 interface IImageMetadata {
