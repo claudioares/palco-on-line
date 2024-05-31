@@ -1,36 +1,13 @@
 ---
 import { PlayCircleIcon } from "lucide-react";
-import { apiImagensCardVideos } from "../../API_simulation_to_test/API";
+import { playlistArr } from "../../API_simulation_to_test/API";
 import { Image } from "astro:assets";
 import InfoMusic from "./infoMusic";
 
-import { youtubeApi } from "../../service/api";
-
-const token = "AIzaSyCgWoKMHYUyNAKo8zak8pn7wG-xrtzHYP8";
-
-let resultYouTubeApi;
-
-const getYouTubeApi = async () => {
-  try {
-    const response = await youtubeApi.get("/playlists", {
-      params: {
-        part: "snippet",
-        key: `${token}`,
-        maxResult: 50,
-        channelId: "UC08OvoAxFZbfGj0YqI2XuSg",
-      },
-    });
-    getYouTubeApi();
-
-    resultYouTubeApi = response.data;
-  } catch (error) {
-    return console.log(error);
-  }
-};
+const responseRespositorie = await playlistArr();
 ---
 
 <div>
-  <div>{resultYouTubeApi}</div>
   <div
     class={`
         flex flex-wrap w-full h-auto gap-4 justify-center items-center
@@ -38,36 +15,36 @@ const getYouTubeApi = async () => {
         `}
   >
     {
-      apiImagensCardVideos.map((infoCard, _) => (
+      responseRespositorie.map((infoCard: any, index: any) => (
         <div
           class={`
           w-[25%] h-72 flex flex-col gap-3 rounded-lg
           max-md:w-full max-md:px-4
           infocardvideos
           `}
-          id={`${infoCard.slug}`}
+          id={`${infoCard.snippet.description}`}
         >
           <div class="relative flex justify-center items-center w-full h-[61%] bg-white rounded-lg hover:border">
             <a
               class={`absolute gap-1 p-7 top-0 left-0 rounded-lg
               w-full h-full cursor-pointer opacity-0
               hover:flex hover:opacity-100 hover:bg-black hover:bg-opacity-65`}
-              href={`/videos/${infoCard.slug}`}
+              href={`/videos/${infoCard.snippet.title}?index=${infoCard.snippet.position}`}
             >
               <PlayCircleIcon />
             </a>
 
             <Image
-              src={infoCard.img}
+              src={infoCard.snippet.thumbnails.high.url}
               alt="imagem de fundo do card"
               class="w-full h-full rounded-lg"
+              inferSize={true}
             />
           </div>
 
           <InfoMusic
-            musicName={infoCard.nameMusic}
-            composer={infoCard.composer}
-            interpreter={infoCard.interpreter}
+            musicName={infoCard.snippet.title}
+            interpreter={infoCard.snippet.videoOwnerChannelTitle}
           />
         </div>
       ))
