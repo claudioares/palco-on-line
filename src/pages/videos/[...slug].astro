@@ -1,9 +1,11 @@
 ---
 import LayoutVideo from "../../layouts/LayoutVideos.astro";
 import { playlistArr } from "../../API_simulation_to_test/API";
-import { ArrowBigLeftIcon, PlayCircle } from "lucide-react";
+import { PlayCircle } from "lucide-react";
 import { Image } from "astro:assets";
+import logo from "../../assets/palco.png";
 import "../../../app/globals.css";
+import Header from "../../components/header/Header.astro";
 const responseRespositorie = await playlistArr();
 
 export const getStaticPaths = async () => {
@@ -25,80 +27,85 @@ const { nameMusic, videoPosition } = Astro.props;
 ---
 
 <LayoutVideo title={`palco ${nameMusic}`}>
-  <main class="bg-bg-logo w-full h-screen flex items-center justify-between">
+  <main
+    class={`
+    bg-bg-logo flex flex-col w-full min-h-full
+    lg:flex-grow
+  `}
+  >
+    <Header />
     <section
       class={`
-      flex flex-col h-full w-[17%] overflow-y-auto gap-2 p-4
-      max-lg:w-full
-    `}
+        h-full w-full
+        flex flex-col items-center py-28 px-10
+      `}
     >
-      {
-        responseRespositorie.map((infoCard: any) => (
-          <div
-            class={`
-              w-full h-auto flex flex-col rounded-lg
-              max-md:w-full max-md:px-4
-              infocardvideos
-            `}
-            id={`${infoCard.snippet.description}`}
-          >
-            <div class="relative flex justify-center items-center w-full h-auto bg-white rounded-lg hover:border">
-              <a
-                class={`absolute gap-1 p-4 top-0 left-0 rounded-lg
-                w-full h-full cursor-pointer opacity-0
-                hover:flex hover:opacity-100 hover:bg-black hover:bg-opacity-65`}
-                href={`/videos/${infoCard.snippet.title}?index=${infoCard.snippet.position}`}
-              >
-                <div>
-                  <span class="text-white text-sm w-full h-full flex items-center justify-center">
-                    {infoCard.snippet.title
-                      .split("")
-                      .slice(0, 35)
-                      .join("")
-                      .concat("...")}
-                  </span>
-                </div>
-              </a>
-
-              <Image
-                src={infoCard.snippet.thumbnails.high.url}
-                alt="imagem de fundo do card"
-                class="w-full h-full rounded-lg"
-                inferSize={true}
-              />
-            </div>
-          </div>
-        ))
-      }
-    </section>
-    <section
-      class={`
-        bg-rose-950 bg-opacity-65 flex flex-col items-center justify-center h-screen w-[83%]
-        max-lg:w-full
-        `}
-    >
-      <div class="w-full h-14 flex items-center px-6">
-        <div class="flex text-white hover:opacity-90 cursor-pointer">
-          <ArrowBigLeftIcon />
-          <a href="/videos">Voltar</a>
-        </div>
-      </div>
-      <div
-        class="w-full h-full py-16 px-32 flex flex-col items-center justify-center object-contain"
-      >
-        <div class="flex w-full h-auto items-center py-2 gap-2">
-          <PlayCircle className="animate-pulse text-lime-500" />
-          <span class="text-lime-500">Play</span>
-        </div>
+      <div class="">
         <iframe
           src={`https://www.youtube.com/embed/${responseRespositorie[videoPosition].snippet.resourceId.videoId}`}
           title=`${responseRespositorie[videoPosition].snippet.title}`
           allow="autoplay"
           allowfullscreen
-          class="w-full h-full"
+          class="w-[695px] h-[394px] rounded-lg"
         >
         </iframe>
+        <div class="text-white py-2 flex justify-start items-center gap-2">
+          <Image
+            src={logo}
+            alt="Logotipo do palco on line"
+            class={`
+          w-12
+          rounded-[50%]
+          `}
+          />
+          <h1 class="font-Inter text-xl">{nameMusic}</h1>
+        </div>
       </div>
     </section>
   </main>
+
+  <section
+    class={`
+      grid grid-cols-1 min-h-full w-[45%] gap-2 px-4 mt-28
+    `}
+  >
+    {
+      responseRespositorie.map((infoCard: any) => (
+        <div
+          class={`
+              w-96 h-auto flex flex-col rounded-lg
+              max-md:w-full max-md:px-4
+              infocardvideos
+            `}
+          id={`${infoCard.snippet.description}`}
+        >
+          <div class="relative flex justify-center items-center w-full bg-white rounded-lg hover:border">
+            <a
+              class={`absolute gap-1 p-4 top-0 left-0 rounded-lg
+                w-full h-full cursor-pointer opacity-0
+                hover:flex hover:opacity-100 hover:bg-black hover:bg-opacity-65`}
+              href={`/videos/${infoCard.snippet.title}?index=${infoCard.snippet.position}`}
+            >
+              <div>
+                <span class="text-white text-sm w-full h-full flex items-center justify-center">
+                  {infoCard.snippet.title
+                    .split("")
+                    .slice(0, 35)
+                    .join("")
+                    .concat("...")}
+                </span>
+              </div>
+            </a>
+
+            <Image
+              src={infoCard.snippet.thumbnails.high.url}
+              alt="imagem de fundo do card"
+              class="w-full h-full rounded-lg"
+              inferSize={true}
+            />
+          </div>
+        </div>
+      ))
+    }
+  </section>
 </LayoutVideo>
